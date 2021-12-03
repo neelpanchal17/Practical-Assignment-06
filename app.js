@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 app.use(express.json());
-const port = 5000;
+//const port = 5000;
 
 const leagueRoutes = require("./routes/league");
 const clubRoutes = require("./routes/club");
@@ -13,4 +13,4 @@ app.use("/league",leagueRoutes);
 app.use("/club",clubRoutes);
 app.use("/manager",managerRoutes);
 app.use("/players",playerRoutes);
-app.listen(port,()=>console.log("App Listening On Port Number 5000!"));
+app.listen(process.env.PORT || 5000);
